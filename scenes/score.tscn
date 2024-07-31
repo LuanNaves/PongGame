@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://5kym87ec46pq"]
+
+[ext_resource type="Script" path="res://scripts/score.gd" id="1_gkda5"]
+[ext_resource type="FontFile" uid="uid://chsorht6bnga4" path="res://assets/fonts/PixelOperator8.ttf" id="2_a80k6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0tdv"]
+size = Vector2(19, 648.25)
+
+[node name="Score" type="Node"]
+script = ExtResource("1_gkda5")
+
+[node name="Player1 Score" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1 Score"]
+position = Vector2(-11.5, 324.125)
+shape = SubResource("RectangleShape2D_n0tdv")
+
+[node name="Label" type="Label" parent="Player1 Score"]
+texture_filter = 1
+offset_left = 433.0
+offset_top = 46.0
+offset_right = 527.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("2_a80k6")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player2 Score" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2 Score"]
+position = Vector2(812, 325)
+shape = SubResource("RectangleShape2D_n0tdv")
+
+[node name="Label" type="Label" parent="Player2 Score"]
+texture_filter = 1
+offset_left = 266.0
+offset_top = 42.0
+offset_right = 357.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("2_a80k6")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Player1 Score" to="." method="_on_player_1_score_body_entered"]
+[connection signal="body_entered" from="Player2 Score" to="." method="_on_player_2_score_body_entered"]
