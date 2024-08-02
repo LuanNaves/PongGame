@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://chsorht6bnga4" path="res://assets/fonts/PixelOperator8.ttf" id="2_a80k6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0tdv"]
-size = Vector2(19, 648.25)
+size = Vector2(18.25, 644.125)
 
 [node name="Score" type="Node"]
 script = ExtResource("1_gkda5")
@@ -12,15 +12,21 @@ script = ExtResource("1_gkda5")
 [node name="Player1 Score" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1 Score"]
-position = Vector2(-11.5, 324.125)
+position = Vector2(-11.125, 324.125)
 shape = SubResource("RectangleShape2D_n0tdv")
 
 [node name="Label" type="Label" parent="Player1 Score"]
 texture_filter = 1
-offset_left = 433.0
-offset_top = 46.0
-offset_right = 527.0
-offset_bottom = 104.0
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 646.0
+offset_top = 25.0
+offset_right = 740.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_a80k6")
 theme_override_font_sizes/font_size = 32
 text = "0"
@@ -30,15 +36,22 @@ vertical_alignment = 1
 [node name="Player2 Score" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2 Score"]
-position = Vector2(812, 325)
+position = Vector2(1163.25, 323.063)
 shape = SubResource("RectangleShape2D_n0tdv")
 
 [node name="Label" type="Label" parent="Player2 Score"]
 texture_filter = 1
-offset_left = 266.0
-offset_top = 42.0
-offset_right = 357.0
-offset_bottom = 104.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 412.0
+offset_top = 25.0
+offset_right = 506.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_a80k6")
 theme_override_font_sizes/font_size = 32
 text = "0"

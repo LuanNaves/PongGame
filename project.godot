@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 Game="*res://scripts/global/game.gd"
 
-[display]
-
-window/size/viewport_width=800
-
 [input]
 
 player1_up={

@@ -5,25 +5,25 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_wd70h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqdll"]
-size = Vector2(800, 19)
+size = Vector2(1152, 19)
 
 [node name="Walls" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_45pdd")
 
 [node name="TopWall" type="Sprite2D" parent="."]
-position = Vector2(400, 9.5)
-scale = Vector2(800, 19)
+position = Vector2(576, 9.5)
+scale = Vector2(1152, 19)
 texture = SubResource("CanvasTexture_wd70h")
 
 [node name="TopWallCollision" type="CollisionShape2D" parent="."]
-position = Vector2(400, 9.5)
+position = Vector2(576.5, 9.5)
 shape = SubResource("RectangleShape2D_pqdll")
 
 [node name="BottomWall" type="Sprite2D" parent="."]
-position = Vector2(400, 638)
-scale = Vector2(800, 19)
+position = Vector2(576, 638)
+scale = Vector2(1152, 19)
 texture = SubResource("CanvasTexture_wd70h")
 
 [node name="BottomWallCollision" type="CollisionShape2D" parent="."]
-position = Vector2(400, 638)
+position = Vector2(576, 638)
 shape = SubResource("RectangleShape2D_pqdll")

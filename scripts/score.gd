@@ -9,11 +9,11 @@ var P2_SCORE = Game.player2_score
 func _on_player_1_score_body_entered(body):
 	P1_SCORE += 1
 	p1_label.text = str(P1_SCORE)
-	ball.reset()
+	ball.reset_ball()
 
 func _on_player_2_score_body_entered(body):
 	P2_SCORE += 1
 	p2_label.text = str(P2_SCORE)
-	ball.reset()
+	ball.reset_ball()
 
 
