@@ -1,14 +1,11 @@
 extends CharacterBody2D
 
 const START_SPEED = 400.0
-const ACCEL = 30.0
+const ACCEL = 50.0
 var speed : int
 var dir : Vector2
 const MAX_Y_VECTOR : float = 0.6
 
-func _ready():
-	pass
-	
 func reset_ball():
 	# Alterando o angulo e a posição que a bola vai começar
 	position.x = 576
@@ -26,6 +23,7 @@ func _physics_process(delta):
 	var collision = move_and_collide(dir * speed * delta)
 	var collider
 	if collision:
+		collider = collision.get_collider()
 		if collider == $"../Player1" or collider == $"../Player2":
 			speed += ACCEL
 			dir = new_direction(collider)
@@ -43,6 +41,6 @@ func new_direction(collider):
 		new_dir.x = -1
 	else:
 		new_dir.x = 1
-	new_dir.y = (dist / collider.p_height  / 2) * MAX_Y_VECTOR
+	new_dir.y = (dist / (collider.p_height / 2)) * MAX_Y_VECTOR
 	return new_dir.normalized()
 	

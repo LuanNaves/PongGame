@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
 const SPEED = 400.0
+var p_height : int
+
+func _ready():
+	p_height = $ColorRect.get_size().y
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
