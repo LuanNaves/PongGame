@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv2eyxjhivvip"]
-
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_5nxke"]
+[gd_scene load_steps=2 format=3 uid="uid://bv2eyxjhivvip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8crfl"]
 size = Vector2(20, 124)
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_5nxke")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8

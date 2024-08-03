@@ -24,7 +24,7 @@ func _physics_process(delta):
 	var collider
 	if collision:
 		collider = collision.get_collider()
-		if collider == $"../Player1" or collider == $"../Player2":
+		if collider == $"../Player1" or collider == $"../Player2" or collider == $"../CPU":
 			speed += ACCEL
 			dir = new_direction(collider)
 		else:

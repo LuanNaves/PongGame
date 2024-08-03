@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdqfi2vtswspg"]
+
+[ext_resource type="Script" path="res://scripts/game_mode.gd" id="1_qw50d"]
+[ext_resource type="PackedScene" uid="uid://cn8stup7tm812" path="res://scenes/background.tscn" id="2_81ngg"]
+[ext_resource type="FontFile" uid="uid://d3cj18pjub8ye" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_tisn6"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h3mej"]
+
+[node name="GameMode" type="Node"]
+script = ExtResource("1_qw50d")
+
+[node name="Background" parent="." instance=ExtResource("2_81ngg")]
+
+[node name="SinglePlayer" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -124.0
+offset_right = 147.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_tisn6")
+theme_override_font_sizes/font_size = 32
+text = "1 Player"
+icon = SubResource("ViewportTexture_h3mej")
+
+[node name="MultiPlayer" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = 76.0
+offset_right = 147.5
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_tisn6")
+theme_override_font_sizes/font_size = 32
+text = "2 Players"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -274.0
+offset_right = 276.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_tisn6")
+theme_override_font_sizes/font_size = 64
+text = "GAME MODE
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="SinglePlayer" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="MultiPlayer" to="." method="_on_multi_player_pressed"]

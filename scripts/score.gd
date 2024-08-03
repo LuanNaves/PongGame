@@ -5,8 +5,8 @@ extends Node
 @onready var p2_label = $"Player2 Score/Label"
 @onready var timer = $Timer
 
-var P1_SCORE = Game.player1_score
-var P2_SCORE = Game.player2_score
+var P1_SCORE = MultiplayerGame.player1_score
+var P2_SCORE = MultiplayerGame.player2_score
 
 
 func _on_player_1_score_body_entered(body):

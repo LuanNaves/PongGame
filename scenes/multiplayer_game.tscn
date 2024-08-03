@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://bu8bj6olc82w1"]
+
+[ext_resource type="Script" path="res://scripts/multiplayer_game.gd" id="1_c2kbr"]
+[ext_resource type="PackedScene" uid="uid://cn8stup7tm812" path="res://scenes/background.tscn" id="2_3g7vu"]
+[ext_resource type="PackedScene" uid="uid://myg0teikumsd" path="res://scenes/walls.tscn" id="3_blf1h"]
+[ext_resource type="PackedScene" uid="uid://bueweosy3541l" path="res://scenes/ball.tscn" id="4_y606n"]
+[ext_resource type="PackedScene" uid="uid://bv2eyxjhivvip" path="res://scenes/player.tscn" id="5_yl5p8"]
+[ext_resource type="Script" path="res://scripts/player2.gd" id="6_bmu6n"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="6_lq72s"]
+[ext_resource type="PackedScene" uid="uid://5kym87ec46pq" path="res://scenes/score.tscn" id="7_k54ag"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7sv4s"]
+color = Color(1, 1, 1, 1)
+thickness = 5
+vertical = true
+
+[node name="MultiplayerGame" type="Node"]
+script = ExtResource("1_c2kbr")
+
+[node name="Background" parent="." instance=ExtResource("2_3g7vu")]
+
+[node name="VSeparator2" type="VSeparator" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 647.0
+theme_override_styles/separator = SubResource("StyleBoxLine_7sv4s")
+
+[node name="Walls" parent="." instance=ExtResource("3_blf1h")]
+
+[node name="Ball" parent="." instance=ExtResource("4_y606n")]
+position = Vector2(576, 324)
+
+[node name="Player1" parent="." instance=ExtResource("5_yl5p8")]
+position = Vector2(1127, 324)
+script = ExtResource("6_lq72s")
+
+[node name="Player2" parent="." instance=ExtResource("5_yl5p8")]
+position = Vector2(25, 324)
+script = ExtResource("6_bmu6n")
+
+[node name="Score" parent="." instance=ExtResource("7_k54ag")]
+
+[node name="BallTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="BallTimer" to="." method="_on_ball_timer_timeout"]

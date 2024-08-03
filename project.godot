@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Game="*res://scripts/game.gd"
+SinglePlayerGame="*res://scripts/single_player_game.gd"
+MultiplayerGame="*res://scripts/multiplayer_game.gd"
 
 [input]
 

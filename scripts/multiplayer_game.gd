@@ -1,5 +1,6 @@
 extends Node
 
+const PADDLE_SPEED : float = 500
 var player1_score = 0
 var player2_score = 0
 
