@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu8bj6olc82w1"]
+[gd_scene load_steps=11 format=3 uid="uid://bu8bj6olc82w1"]
 
 [ext_resource type="Script" path="res://scripts/multiplayer_game.gd" id="1_c2kbr"]
 [ext_resource type="PackedScene" uid="uid://cn8stup7tm812" path="res://scenes/background.tscn" id="2_3g7vu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/player2.gd" id="6_bmu6n"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="6_lq72s"]
 [ext_resource type="PackedScene" uid="uid://5kym87ec46pq" path="res://scenes/score.tscn" id="7_k54ag"]
+[ext_resource type="PackedScene" uid="uid://c5waacps27aph" path="res://scenes/sounds.tscn" id="9_rtb2n"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_7sv4s"]
 color = Color(1, 1, 1, 1)
@@ -45,5 +46,7 @@ script = ExtResource("6_bmu6n")
 [node name="BallTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="Sounds" parent="." instance=ExtResource("9_rtb2n")]
 
 [connection signal="timeout" from="BallTimer" to="." method="_on_ball_timer_timeout"]

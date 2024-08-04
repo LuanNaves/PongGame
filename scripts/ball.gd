@@ -5,6 +5,7 @@ const ACCEL = 50.0
 var speed : int
 var dir : Vector2
 const MAX_Y_VECTOR : float = 0.6
+@onready var sounds = $"../Sounds"
 
 func reset_ball():
 	# Alterando o angulo e a posição que a bola vai começar
@@ -25,9 +26,11 @@ func _physics_process(delta):
 	if collision:
 		collider = collision.get_collider()
 		if collider == $"../Player1" or collider == $"../Player2" or collider == $"../CPU":
+			sounds.play_paddle()
 			speed += ACCEL
 			dir = new_direction(collider)
 		else:
+			sounds.play_wall()
 			dir = dir.bounce(collision.get_normal())
 
 func new_direction(collider):
